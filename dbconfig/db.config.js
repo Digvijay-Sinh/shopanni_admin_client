@@ -3,8 +3,8 @@ const mysql = require('mysql');
 //local mysql db connection
 const dbConn = mysql.createConnection({
     host: 'localhost',
-    user: 'admin',
-    password: 'shopanni',
+    user: 'root',
+    password: '',
     database: 'shopannies_db'
 });
 dbConn.connect(function(err) {
