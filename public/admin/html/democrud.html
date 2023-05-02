@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD Application</title>
+  </head>
+
+  <body>
+    <h1>CRUD Application</h1>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" />
+      <button onclick="createUser()">Create User</button>
+    </div>
+    <br />
+    <div>
+      <ul id="users"></ul>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const apiUrl = "http://localhost:3000/users";
+
+      function getUsers() {
+        axios.get(apiUrl).then((response) => {
+          const users = response.data;
+          const userList = document.getElementById("users");
+          userList.innerHTML = "";
+
+          users.forEach((user) => {
+            const listItem = document.createElement("li");
+            const textNode = document.createTextNode(user.name);
+            const deleteButton = document.createElement("button");
+            deleteButton.innerText = "Delete";
+            deleteButton.onclick = () => {
+              deleteUser(user.id);
+            };
+
+            listItem.appendChild(textNode);
+            listItem.appendChild(deleteButton);
+            userList.appendChild(listItem);
+          });
+        });
+      }
+
+      function createUser() {
+        const name = document.getElementById("name").value;
+        axios
+          .post(apiUrl, {
+            name,
+          })
+          .then(() => {
+            getUsers();
+          });
+      }
+
+      function deleteUser(id) {
+        axios.delete(`${apiUrl}/${id}`).then(() => {
+          getUsers();
+        });
+      }
+
+      getUsers();
+    </script>
+  </body>
+</html>

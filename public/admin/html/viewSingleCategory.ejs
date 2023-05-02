@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="/admin/assets/" data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Shoppanies.in | Admin Dashboard</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/admin/assets/img/favicon/logo2.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="/admin/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/admin/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/admin/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/admin/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="/admin/assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="/admin/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="/admin/assets/js/config.js"></script>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="admin/html/index.html" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                <img
+                  src="/admin/LoginStyle/img/logo2.png"
+                  alt=""
+                  width="200px"
+                />
+              </span>
+                        <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2"
+                >Shoppanies</span
+              > -->
+                    </a>
+
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+
+                <div class="menu-inner-shadow"></div>
+
+                <ul class="menu-inner py-1">
+                    <!-- Dashboard -->
+                    <li class="menu-item">
+                        <a href="http://localhost:5000/index" class="menu-link">
+                            <i class=""></i>
+                            <div data-i18n="Analytics">Dashboard</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="http://localhost:5000/add_product" class="menu-link">
+                            <i class=""></i>
+                            <div data-i18n="Analytics">Add Products</div>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="http://localhost:5000/view_products" class="menu-link">
+                            <i class=""></i>
+                            <div data-i18n="Analytics">Products</div>
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="http://localhost:5000/categories" class="menu-link">
+                            <i class=""></i>
+                            <div data-i18n="Analytics">Add Category</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="http://localhost:5000/coupons" class="menu-link">
+                            <i class=""></i>
+                            <div data-i18n="Analytics">Add Coupons</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="http://localhost:5000/users" class="menu-link">
+                            <i class=""></i>
+                            <div data-i18n="Analytics">Users</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="http://localhost:5000/reviews" class="menu-link">
+                            <i class=""></i>
+                            <div data-i18n="Analytics">Reviews</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="http://localhost:5000/logout
+              " class="menu-link">
+                            <i class=""></i>
+                            <div onclick="logout()" data-i18n="Analytics">Logout</div>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- / Menu -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="bx bx-menu bx-sm"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item d-flex align-items-center">
+                                <i class="bx bx-search fs-4 lh-0"></i>
+                                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
+                            </div>
+                        </div>
+                        <!-- /Search -->
+                    </div>
+                </nav>
+
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Admin /</span> Update Category</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-4">
+                                    <h5 class="card-header">Admin | Update Category</h5>
+                                    <div class="card-body">
+                                        <form id="updateCategoryForm" action="" method="post">
+                                            <div>
+                                                <label for="defaultFormControlInput" class="form-label">Category Name</label>
+                                                <input name="name" type="text" class="form-control" id="categoryNameForm" placeholder="Add Category Name" aria-describedby="defaultFormControlHelp" />
+                                                <div id="defaultFormControlHelp" class="form-text">
+                                                    Add Category Name Here !
+                                                </div>
+                                                <div>
+                                                    <label for="exampleFormControlTextarea1" class="form-label">Category description</label>
+                                                    <textarea name="description" class="form-control" id="categoryDescriptionForm" rows="5">
+                        </textarea>
+                                                </div>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">Add Category</button>
+                                        </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="/admin/assets/vendor/libs/jquery/jquery.js"></script>
+                            <script src="/admin/assets/vendor/libs/popper/popper.js"></script>
+                            <script src="/admin/assets/vendor/js/bootstrap.js"></script>
+                            <script src="/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+                            <script src="/admin/assets/vendor/js/menu.js"></script>
+                            <!-- endbuild -->
+
+                            <!-- Vendors JS -->
+                            <script src="/admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+                            <!-- Main JS -->
+                            <script src="/admin/assets/js/main.js"></script>
+
+                            <!-- Page JS -->
+                            <script src="/admin/assets/js/dashboards-analytics.js"></script>
+
+                            <!-- Place this tag in your head or just before your close body tag. -->
+                            <script async defer src="https://buttons.github.io/buttons.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                            <!-- js -->
+                            <script src="/admin/html/updateCategory.js"></script>
+</body>
+
+</html>

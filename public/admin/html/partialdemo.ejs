@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="admin/assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Shoppanies.in | Admin Dashboard</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="admin/assets/img/favicon/logo2.ico"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="admin/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link
+      rel="stylesheet"
+      href="admin/assets/vendor/css/core.css"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      href="admin/assets/vendor/css/theme-default.css"
+      class="template-customizer-theme-css"
+    />
+    <link rel="stylesheet" href="admin/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link
+      rel="stylesheet"
+      href="admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="admin/assets/vendor/libs/apex-charts/apex-charts.css"
+    />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="admin/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="admin/assets/js/config.js"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <%- include('./partialNavbar.ejs') %>
+
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div
+              class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none"
+            >
+              <a
+                class="nav-item nav-link px-0 me-xl-4"
+                href="javascript:void(0)"
+              >
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
+
+            <div
+              class="navbar-nav-right d-flex align-items-center"
+              id="navbar-collapse"
+            >
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-search fs-4 lh-0"></i>
+                  <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                  />
+                </div>
+              </div>
+              <!-- /Search -->
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div id="cardContainer" class="row">
+                <div class="col-lg-4 col-md-4 order-1">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div
+                            class="card-title d-flex align-items-start justify-content-between"
+                          >
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="admin/assets/img/icons/unicons/chart-success.png"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt3"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div
+                                class="dropdown-menu dropdown-menu-end"
+                                aria-labelledby="cardOpt3"
+                              >
+                                <a
+                                  class="dropdown-item"
+                                  href="javascript:void(0);"
+                                  >View More</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  href="javascript:void(0);"
+                                  >Delete</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1">Profit</span>
+                          <h3 id="demoData" class="card-title mb-2"></h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div
+                            class="card-title d-flex align-items-start justify-content-between"
+                          >
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="admin/assets/img/icons/unicons/wallet-info.png"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt6"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div
+                                class="dropdown-menu dropdown-menu-end"
+                                aria-labelledby="cardOpt6"
+                              >
+                                <a
+                                  class="dropdown-item"
+                                  href="javascript:void(0);"
+                                  >View More</a
+                                >
+                                <button
+                                  class="delete-button"
+                                  data-id=""
+                                  onclick=""
+                                >
+                                  <a
+                                    class="dropdown-item"
+                                    href="javascript:void(0);"
+                                    >Delete</a
+                                  >
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <span>Sales</span>
+                          <h3 id="sales" class="card-title text-nowrap mb-1">
+                            $4,679
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                  <div class="row">
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div
+                            class="card-title d-flex align-items-start justify-content-between"
+                          >
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="admin/assets/img/icons/unicons/paypal.png"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt4"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div
+                                class="dropdown-menu dropdown-menu-end"
+                                aria-labelledby="cardOpt4"
+                              >
+                                <a
+                                  class="dropdown-item"
+                                  href="javascript:void(0);"
+                                  >View More</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  href="javascript:void(0);"
+                                  >Delete</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <span class="d-block mb-1">Payments</span>
+                          <h3 class="card-title text-nowrap mb-2">$2,456</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div
+                            class="card-title d-flex align-items-start justify-content-between"
+                          >
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="admin/assets/img/icons/unicons/cc-primary.png"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt1"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div
+                                class="dropdown-menu"
+                                aria-labelledby="cardOpt1"
+                              >
+                                <a
+                                  class="dropdown-item"
+                                  href="javascript:void(0);"
+                                  >View More</a
+                                >
+                                <a
+                                  class="dropdown-item"
+                                  href="javascript:void(0);"
+                                  >Delete</a
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1"
+                            >Transactions</span
+                          >
+                          <h3 class="card-title mb-2">$14,857</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- </div>
+    <div class="row"> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="card">
+                  <h5 class="card-header">Orders</h5>
+                  <div class="table-responsive text-nowrap">
+                    <table id="ordersTable" class="table">
+                      <thead>
+                        <tr class="text-nowrap">
+                          <th>#</th>
+                          <th>Order Id</th>
+                          <th>User</th>
+                          <th>Product Id</th>
+                          <th>Total Amount</th>
+                          <th>Payment Status</th>
+                          <th>Date Of Order</th>
+                          <!-- <th>Address</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>Phone Number</th>
+                          <th>Email</th>
+                          <th>Action</th> -->
+                        </tr>
+                      </thead>
+                      <tbody id="ordersTableBody"></tbody>
+                    </table>
+                  </div>
+                </div>
+                <!--/ Responsive Table -->
+              </div>
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div
+                class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column"
+              >
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a
+                    href="https://themeselection.com"
+                    target="_blank"
+                    class="footer-link fw-bolder"
+                    >Sumit And Digvijay</a
+                  >
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="admin/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="admin/assets/vendor/libs/popper/popper.js"></script>
+    <script src="admin/assets/vendor/js/bootstrap.js"></script>
+    <script src="admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="admin/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="admin/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="admin/assets/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="admin/html/getAndDeleteOrders.js"></script>
+    <!-- js -->
+    <!-- <script src="./connnect_to_node.js"></script> -->
+  </body>
+</html>
